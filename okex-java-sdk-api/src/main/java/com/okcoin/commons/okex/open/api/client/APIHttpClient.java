@@ -60,6 +60,7 @@ public class APIHttpClient {
         clientBuilder.connectTimeout(this.config.getConnectTimeout(), TimeUnit.SECONDS);
         clientBuilder.readTimeout(this.config.getReadTimeout(), TimeUnit.SECONDS);
         clientBuilder.writeTimeout(this.config.getWriteTimeout(), TimeUnit.SECONDS);
+        clientBuilder.proxy(this.config.getProxy());
         clientBuilder.retryOnConnectionFailure(this.config.isRetryOnConnectionFailure());
         clientBuilder.addInterceptor((Interceptor.Chain chain) -> {
             final Request.Builder requestBuilder = chain.request().newBuilder();
