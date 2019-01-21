@@ -19,6 +19,7 @@ OKCoin OKEX V3 Open Api使用说明
         config.setSecretKey("8DF095FE9C662F787A60F3133A06414C");
         config.setPassphrase("19205A%9980");
         config.setPrint(false);
+        config.setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 1080)));
 
         GeneralAPIService marketAPIService = new GeneralAPIServiceImpl(config);
         ServerTime time = marketAPIService.getServerTime();
@@ -61,6 +62,7 @@ public class TestOKEXOpenApiV3 {
         config.setSecretKey("8DF095FE9C662F787A60F3133A06414C");
         config.setPassphrase("19205A%9980");
         config.setPrint(false);
+        config.setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 1080)));
         return config;
     }
 
